@@ -3,6 +3,14 @@ resource "aws_launch_configuration" "web_server_as" {
     instance_type = "t2.micro"
     key_name = "KeyPair"
 }
+
+resource "aws_autoscaling_tag" "web_server_as_tag" {
+  key                 = "grp"
+  value               = "asg1"
+  propagate_at_launch = true
+  resource_id         = aws_launch_configuration.web_server_as.name
+  resource_type       = "launch_configuration"
+}
    
 
 
