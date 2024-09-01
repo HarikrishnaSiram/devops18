@@ -22,7 +22,7 @@ resource "aws_launch_configuration" "web_server_as" {
   }
 resource "aws_autoscaling_group" "web_server_asg" {
     name                 = "web-server-asg"
-    launch_configuration = aws_launch_configuration.web_server_as.name
+    launch_configuration = aws_launch_configuration.web_server_as.id
     min_size             = 1
     max_size             = 3
     desired_capacity     = 2
