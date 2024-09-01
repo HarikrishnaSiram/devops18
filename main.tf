@@ -2,10 +2,6 @@ resource "aws_launch_configuration" "web_server_as" {
     image_id           = "ami-02c21308fed24a8ab"
     instance_type = "t2.micro"
     key_name = "KeyPair"
-tags = {
-Name = "web-server"
-grp = "asg1"
-}
 }
    
 
