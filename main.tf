@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "web_server_as" {
-    image_id           = "ami-0c8e23f950c7725b9"
+    image_id           = "ami-02c21308fed24a8ab"
     instance_type = "t2.micro"
     key_name = "KeyPair"
 }
@@ -22,7 +22,7 @@ resource "aws_launch_configuration" "web_server_as" {
   }
 resource "aws_autoscaling_group" "web_server_asg" {
     name                 = "web-server-asg"
-    launch_configuration = aws_launch_configuration.web_server_as.name
+    launch_configuration = aws_launch_configuration.web_server_asg.name
     min_size             = 1
     max_size             = 3
     desired_capacity     = 2
